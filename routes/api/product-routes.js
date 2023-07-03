@@ -2,15 +2,13 @@ const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
-router.get('/api/products', (req, res) => {
-  res.send('endpoint')
-});
+
 // get all products
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
-    include: [Category, { model: Tag, model: ProductTag }],
+    include: [{ model: Category }, { model: Tag }],
   })
     .then((product) => res.json(product))
     .catch((err) => res.status(500).json(err));
@@ -22,7 +20,7 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Category and Tag data
   Product.findOne({
     where: { id: req.params.id },
-    include: [Category, { model: Tag, model: ProductTag }],
+    include: [{ model: Category }, { model: Tag }],
   })
     .then((product) => res.json(product))
     .catch((err) => res.status(400).json(err));
@@ -111,7 +109,7 @@ router.delete('/:id', (req, res) => {
   Product.destroy({
     where: { id: req.params.id },
   })
-    .then((category) => res.json(category))
+    .then((product) => res.json(product))
     .catch((err) => res.status(500).json(err));
 });
 
