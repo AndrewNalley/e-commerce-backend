@@ -2,9 +2,6 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
 The main reason I created this project was to explore the relationships of SQL-oriented datbases and how they interact with typical CRUD operations. By using the popular format of an e-commerce website, I was able to experience its real-world application. I wanted to be able to better understand how relational databases work, and this project helped me understand one-to-one, one-to-many, and other relational concepts. Completing this project also gave me more experience with routes. 
 
 This project can be used by a company that wants to compete in the online shopping market. With the back-end completed, a company can spend more time on building an attractive front-end website. 
@@ -29,8 +26,6 @@ SO THAT my company can compete with other e-commerce companies
 
 
 ## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 To install, please git clone https://github.com/AndrewNalley/e-commerce-backend
 
