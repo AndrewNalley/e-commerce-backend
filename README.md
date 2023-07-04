@@ -5,9 +5,10 @@
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+The main reason I created this project was to explore the relationships of SQL-oriented datbases and how they interact with typical CRUD operations. By using the popular format of an e-commerce website, I was able to experience its real-world application. I wanted to be able to better understand how relational databases work, and this project helped me understand one-to-one, one-to-many, and other relational concepts. Completing this project also gave me more experience with routes. 
+
+This project can be used by a company that wants to compete in the online shopping market. With the back-end completed, a company can spend more time on building an attractive front-end website. 
+
 
 USER STORY
 
@@ -15,73 +16,87 @@ AS A manager at an internet retail company
 I WANT a back end for my e-commerce website that uses the latest technologies
 SO THAT my company can compete with other e-commerce companies
 
-ACCEPTANCE CRITERIA
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
 
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents 
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Features](#features)
+- [Contribute](#contribute)
+
 
 ## Installation
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
+To install, please git clone https://github.com/AndrewNalley/e-commerce-backend
+
+Make sure you have a `.env` file in the project. If not, create one and make sure it has the following information within: 
+
+DB_NAME="ecommerce_db"
+DB_USER="`<your mysql username>`"
+DB_PASSWORD="`<your mysql password>`"
+
+If you do not already have it, download an API client like Insomnia REST client. You can get it here: https://insomnia.rest/
+
+
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Open the terminal from the root folder.
+Then, run `npm install` to make sure you have all the necessary node modules.
+Next, run `mysql -u root -p` and enter your mysql password.
+Enter `source .db/schema.sql`, then exit mysql by entering either `quit` or `exit`
+Seed the database with `npm run seed`. Start the server with `npm start`
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Now, open Insomnia REST client and put http://localhost:3001/ into the search bar. If you try a route that doesn't have an endpoint, the server will return 'Wrong Route!'
+First, try a GET route like http://localhost:3001/api/categories. This will return JSON data for all the categories. Try the other routes too! If you want to POST or PUT, make sure it is the correct format. To DELETE, you only need the ID of the item you are trying to delete on the particular route. 
 
-
-    ![alt text](assets/images/screenshot.png)
+Video walkthrough: 
+https://drive.google.com/file/d/1JASq3porNkPysDrFqQcHkLeHLSBHq1kn/view
 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Insomnia REST client: https://insomnia.rest/
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+MIT License
 
----
+Copyright (c) 2023 Andrew Nalley
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Badges
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 ## Features
 
-If your project has a lot of features, list them here.
+Express.js
+MySQL
+Sequelize
 
-## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+## Contribute
 
-## Tests
+[Contributor Covenant](https://www.contributor-covenant.org/)
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+
