@@ -31,8 +31,9 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.update({ 
+  Category.update(req.body, { 
     where: { id: req.params.id },
+    include: [{ model: Product }],
   })
   .then((category) => res.json(category))
   .catch((err) => res.status(500).json(err));
